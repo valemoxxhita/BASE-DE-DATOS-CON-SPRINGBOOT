@@ -13,15 +13,15 @@ public class Paciente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nombre;
-    private LocalDate anioNacimiento;
-    private String ciudad;
-    private String correo;
-    private String telefono;
-    private String ips;
+    private String nombre; // 35 caracteres y solo letras
+    private LocalDate anioNacimiento; // máximo 1900
+    private String ciudad; // 40 caracteres
+    private String correo; // correo valido @sura.com.co
+    private String telefono; // maximo 12 carecteres y solo numeros
+    private String ips; // máximo 50 caracteres
     private Boolean poliza;
-    private String grupoIngresos;
-    private LocalDate fechaAfiliacion;
+    private String grupoIngresos; // solo se admite A, B, C, en mayuscula
+    private LocalDate fechaAfiliacion; // No puede ser menor 2010
 
     public Paciente()
     {
