@@ -1,4 +1,4 @@
-package com.example.ServidorSura5.HELPERS;
+/* package com.example.ServidorSura5.HELPERS;
 
 import com.example.ServidorSura5.MODELOS.Paciente;
 
@@ -91,3 +91,4 @@ public class ValidacionPaciente
 
 
 }
+ */

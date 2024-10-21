@@ -1,8 +1,11 @@
 package com.example.ServidorSura5.MODELOS;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity //anotación, palabra reservada
 @Table(name="pacientes")
@@ -22,6 +25,34 @@ public class Paciente
     private Boolean poliza;
     private String grupoIngresos; // solo se admite A, B, C, en mayuscula
     private LocalDate fechaAfiliacion; // No puede ser menor 2010
+
+
+    // Creando una relación con la clase médico
+    //Me relaciono con un médico
+
+
+    //RELACION CON MEDICO
+    @ManyToOne
+    //Join column y jsonreference solo en many to one
+    @JoinColumn(name = "fk_medico", referencedColumnName = "id")
+    @JsonBackReference
+    private Medico medico;
+
+
+    // RELACION CON SIGNO VITAL
+    @OneToMany (mappedBy = "paciente")
+    @JsonManagedReference
+    private List<SignoVital> signosvitales;
+
+    //RELACION CON ENFERMEDAD
+    @OneToMany (mappedBy = "paciente")
+    @JsonManagedReference
+    private List<Enfermedad> enfermedades;
+
+    //RELACION CON MEDICAMENTO
+    @OneToMany (mappedBy = "paciente")
+    @JsonManagedReference
+    private List<Medicamento> medicamentos;
 
     public Paciente()
     {
