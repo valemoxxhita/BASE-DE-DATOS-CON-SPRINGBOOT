@@ -12,7 +12,7 @@ public class ValidacionPaciente
 
     private Paciente paciente = new Paciente();
 
-    // 2. Creamos un método para cada campo que quiero validar
+    // 2. Creamos un metodo para cada campo que quiero validar
 
 
 
@@ -88,7 +88,6 @@ public class ValidacionPaciente
     }
     public boolean validarGrupo (String grupoIngresos) {}
     public boolean validarFechaAfiliacion  (LocalDate fechaAfiliacion) {}
-
 
 }
  */
