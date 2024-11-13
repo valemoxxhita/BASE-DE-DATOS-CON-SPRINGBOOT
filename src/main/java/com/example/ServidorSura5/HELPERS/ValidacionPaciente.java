@@ -1,4 +1,4 @@
-/* package com.example.ServidorSura5.HELPERS;
+package com.example.ServidorSura5.HELPERS;
 
 import com.example.ServidorSura5.MODELOS.Paciente;
 
@@ -29,65 +29,39 @@ public class ValidacionPaciente
 
         //4. Indico si hubo o no coincidencia
 
-        if (coincidencia.find()) {
-            return true;
-        } else {
-            return false;
-        }
+        return coincidencia.find();
 
     }
-    public boolean validarFechaNacimiento (LocalDate anionacimiento){}
+   /* public boolean validarFechaNacimiento (LocalDate anionacimiento){} */
 
     public boolean validarCiudad (String ciudad){
         String REGEX = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$";
         Pattern patron1 = Pattern.compile(REGEX);
         Matcher coincidencia1 = patron1.matcher(ciudad);
-        if(coincidencia1.find()){
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return coincidencia1.find();
     }
     public boolean validarCorreo (String correo) {
         String REGEX = "^[a-zA-ZñÑ0-9._%+-]+@sura\\.com$";
         Pattern patron1 = Pattern.compile(REGEX);
         Matcher coincidencia1 = patron1.matcher(correo);
-        if(coincidencia1.find()){
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return coincidencia1.find();
     }
     public boolean validarTelefono (String telefono) {
         String REGEX = "^[0-9]+$";
         Pattern patron1 = Pattern.compile(REGEX);
         Matcher coincidencia1 = patron1.matcher(telefono);
-        if(coincidencia1.find()){
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return coincidencia1.find();
     }
     public boolean validarIps (String ips) {
         String REGEX = "^[a-zA-ZñÑ0-9._%+-]+@sura\\.com$";
         Pattern patron1 = Pattern.compile(REGEX);
         Matcher coincidencia1 = patron1.matcher(ips);
-        if(coincidencia1.find()){
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return coincidencia1.find();
     }
-    public boolean validarGrupo (String grupoIngresos) {}
-    public boolean validarFechaAfiliacion  (LocalDate fechaAfiliacion) {}
 
 }
- */
+    /* public boolean validarGrupo (String grupoIngresos) {};
+    public boolean validarFechaAfiliacion  (LocalDate fechaAfiliacion) {}; */
+
+
+
