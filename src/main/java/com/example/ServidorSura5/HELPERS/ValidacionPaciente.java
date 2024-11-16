@@ -1,8 +1,5 @@
 package com.example.ServidorSura5.HELPERS;
-
 import com.example.ServidorSura5.MODELOS.Paciente;
-
-import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,26 +10,22 @@ public class ValidacionPaciente
     private Paciente paciente = new Paciente();
 
     // 2. Creamos un metodo para cada campo que quiero validar
-
-
-
-    public boolean validarNombres (String nombres) {
+    public boolean validarNombre (String nombre) {
         //1. Se consulta una expresión regular, almacenándola en una variable STRING
         String expresionregular = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$";
-
         //2. Activar el patrón
         Pattern patron = Pattern.compile(expresionregular);
-
         //3. Se busca coinciencia entre la cadena y el patron
-
-        Matcher coincidencia = patron.matcher(nombres);
-
+        Matcher coincidencia = patron.matcher(nombre);
         //4. Indico si hubo o no coincidencia
-
         return coincidencia.find();
-
     }
-   /* public boolean validarFechaNacimiento (LocalDate anionacimiento){} */
+    public boolean validarFechaNacimiento (String anionacimiento){
+        String REGEX =  "^\\d{4}-\\d{2}-\\d{2}$";
+        Pattern patron1 = Pattern.compile(REGEX);
+        Matcher coincidencia1 = patron1.matcher(anionacimiento);
+        return coincidencia1.find();
+    }
 
     public boolean validarCiudad (String ciudad){
         String REGEX = "^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$";
@@ -58,10 +51,16 @@ public class ValidacionPaciente
         Matcher coincidencia1 = patron1.matcher(ips);
         return coincidencia1.find();
     }
-
+    public boolean validarGrupo (String grupoIngresos) {
+        return "A".equalsIgnoreCase(grupoIngresos) || "B".equalsIgnoreCase(grupoIngresos) || "C".equalsIgnoreCase(grupoIngresos);
+    }
+    public boolean validarFechaAfiliacion  (String fechaAfiliacion) {
+        String REGEX =  "^\\d{4}-\\d{2}-\\d{2}$";
+        Pattern patron1 = Pattern.compile(REGEX);
+        Matcher coincidencia1 = patron1.matcher(fechaAfiliacion);
+        return coincidencia1.find();
+    }
 }
-    /* public boolean validarGrupo (String grupoIngresos) {};
-    public boolean validarFechaAfiliacion  (LocalDate fechaAfiliacion) {}; */
 
 
 

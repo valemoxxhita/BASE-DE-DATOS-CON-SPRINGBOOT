@@ -1,5 +1,4 @@
 package com.example.ServidorSura5.CONTROLADORES;
-
 import com.example.ServidorSura5.MODELOS.Medico;
 import com.example.ServidorSura5.SERVICIOS.ServicioMedico;
 import org.springframework.beans.factory.annotation.Autowired;
